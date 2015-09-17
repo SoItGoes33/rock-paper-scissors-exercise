@@ -9,7 +9,7 @@ function winner(playerChoice, computerChoice) {
     return "Draw";
 
   if (playerChoice === "Paper") {
-    if (ComputerChoice === "Rock") {
+    if (computerChoice === "Rock") {
       return "You win";
     } else if (computerChoice === "Scissors") {
       return "You lose";
@@ -37,3 +37,19 @@ function winner(playerChoice, computerChoice) {
 // 5. Display the players and the computers choice on the webpage
 // 6. Use the function winner to determine the winner and display results on the page
 // 7. Allow the user to play a new game
+$(document).ready(function(){
+  $(".btn").click(function(){
+  $.get("http://rock-paper-scissors-api.herokuapp.com/", function(data){
+    $("#pieces-played").html("I played " + (data));
+$(".btn-primary").click(function(){
+  $("#pieces-played").html("You played " + ($(this).val());
+})
+
+    })
+  })
+  //.fail(function(){
+  //  alert("There was an error");
+  //});
+});
+}
+);
